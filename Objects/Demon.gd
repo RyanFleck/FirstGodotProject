@@ -12,7 +12,7 @@ var floor_normal = Vector2(0,-1)
 const turn_timeout = 0.5
 var time_since_last_turn = 0
 
-const jump_timeout = 0.3
+const jump_timeout = 0.7
 var current_jump_timeout = 0
 
 # Called when the node enters the scene tree for the first time.
