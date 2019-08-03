@@ -39,30 +39,33 @@ custom_solver_bias = 0.0
 radius = 7.33366
 height = 7.41604
 
-[node name="Player" type="Node2D"]
-
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 2 )
 animation = "idle"
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionCapsule" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
+[node name="CollisionCapsule" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
-position = Vector2( 0.283405, 4.06213 )
+position = Vector2( 0.427185, 5.41104 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="KnifePoint" type="Position2D" parent="." index="2"]
+
+position = Vector2( 16.6834, 7.41297 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 
