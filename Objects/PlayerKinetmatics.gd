@@ -55,8 +55,8 @@ func get_input_movement():
 	
 	if Input.is_action_just_pressed('ui_accept') and is_on_floor():
 	    velocity.y = -jump
-	
-	velocity.y += grav
+	else:
+		velocity.y += grav
 
 func get_input_actions():
 	var action = Input.is_action_just_pressed('ui_attack')

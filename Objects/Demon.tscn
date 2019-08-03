@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Objects/Demon.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/character_sprites/tile000.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/character_sprites/tile010.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/character_sprites/tile011.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/character_sprites/tile012.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/character_sprites/tile005.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/character_sprites/tile001.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/character_sprites/tile002.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/character_sprites/tile003.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "jump",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.42526
+height = 7.43873
+
+[node name="Demon" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0.51405, 5.65456 )
+shape = SubResource( 1 )
