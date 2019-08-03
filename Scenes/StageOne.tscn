@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TileSets/Ground.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/ThrowingKnife.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/character_sprites/tile000.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/character_sprites/tile002.png" type="Texture" id=5]
+[ext_resource path="res://raw_assets/Button.png" type="Texture" id=4]
 
 [sub_resource type="TileSet" id=1]
 
@@ -36,29 +35,37 @@ position = Vector2( 30.6819, 27.3328 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( -39.7946, 36.2358 )
+modulate = Color( 1, 1, 1, 0.4 )
+position = Vector2( -34, 30 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+pressed = ExtResource( 4 )
 action = "ui_left"
 visibility_mode = 1
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( -8.08834, 52.4124 )
+modulate = Color( 1, 1, 1, 0.4 )
+position = Vector2( -5.08834, 56 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+pressed = ExtResource( 4 )
 action = "ui_right"
 visibility_mode = 1
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( 223.562, 50.4712 )
+modulate = Color( 1, 1, 1, 0.4 )
+position = Vector2( 213.562, 56 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+pressed = ExtResource( 4 )
 action = "ui_accept"
 visibility_mode = 1
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( 246.533, 21.0297 )
+modulate = Color( 1, 1, 1, 0.4 )
+position = Vector2( 242.533, 30 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+pressed = ExtResource( 4 )
 action = "ui_attack"
 visibility_mode = 1
