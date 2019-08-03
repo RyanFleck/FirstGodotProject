@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/PlayerKinetmatics.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/character_sprites/tile023.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/character_sprites/tile039.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/character_sprites/tile033.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/character_sprites/tile031.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/character_sprites/tile032.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -31,6 +32,11 @@ animations = [ {
 "loop": false,
 "name": "fall",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "throw",
+"speed": 0.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -39,7 +45,7 @@ custom_solver_bias = 0.0
 radius = 7.33366
 height = 7.41604
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -65,7 +71,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="KnifePoint" type="Position2D" parent="." index="2"]
 
-position = Vector2( 16.6834, 7.41297 )
+position = Vector2( 14.3475, 9.4569 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 

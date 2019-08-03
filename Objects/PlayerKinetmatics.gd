@@ -6,6 +6,9 @@ const speed = 120
 const grav = 40
 const jump = 600
 
+const thrown_timeout = 0.2
+var thrown_time = 0
+
 var facing_right = true
 
 var velocity = Vector2()
@@ -14,16 +17,21 @@ var floor_normal = Vector2(0,-1)
 func _process(delta):
 	var animation
 	
+	if( thrown_time > 0 ):
+		thrown_time -= delta
+	
 	if( !is_on_floor() ):
 		if( velocity.y > 0 ):
 			animation = "jump"
 		else:
 			animation = "fall"
 	else:
-		if( velocity.x == 0 ):
-			animation = "idle"
-		else:
+		if( velocity.x != 0 ):
 			animation = "run"
+		elif( thrown_time > 0 ):
+			animation = "throw"
+		else:
+			animation = "idle"
 	
 	$AnimatedSprite.play(animation)
 
@@ -53,7 +61,8 @@ func get_input_movement():
 func get_input_actions():
 	var action = Input.is_action_just_pressed('ui_attack')
 	
-	if(action):
+	if(action and thrown_time <= 0 ):
+		thrown_time = thrown_timeout
 		var knife = KNIFE.instance()
 		# knife.speed += velocity.x
 		get_parent().add_child(knife)
