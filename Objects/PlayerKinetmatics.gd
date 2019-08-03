@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const speed = 100
+const speed = 120
 const grav = 40
 const jump = 600
 
@@ -12,7 +12,7 @@ func get_input():
 	var left = Input.is_action_pressed('ui_left')
 	
 	var right = Input.is_action_pressed('ui_right')
-		
+	
 	if( left and right ):
 		velocity.x = 0
 	elif( !left and !right ):

@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 7.33366
 height = 7.41604
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 __meta__ = {
 "_edit_group_": true
@@ -30,6 +30,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionCapsule" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
+visible = false
 position = Vector2( 0.283405, 4.06213 )
 shape = SubResource( 1 )
 
