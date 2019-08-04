@@ -15,9 +15,9 @@ radius = 35.0
 height = 50.0
 
 [node name="StageOne" type="Node2D"]
-position = Vector2( 36.6528, 48.8704 )
+position = Vector2( 34.7302, 48.2503 )
 
-[node name="Foreground" type="TileMap" parent="."]
+[node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -79,7 +79,7 @@ visibility_mode = 1
 position = Vector2( 159.547, -107.394 )
 
 [node name="Demon10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 151.125, -127.394 )
+position = Vector2( 236.12, 24.4828 )
 
 [node name="Demon3" parent="." instance=ExtResource( 5 )]
 position = Vector2( -81.0567, -19.798 )
@@ -97,7 +97,7 @@ position = Vector2( -70.7073, -41.5045 )
 position = Vector2( 312.554, 39.9262 )
 
 [node name="Demon8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 304.133, 19.9261 )
+position = Vector2( 114.132, 79.6407 )
 
 [node name="Demon6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 336.444, 40.495 )

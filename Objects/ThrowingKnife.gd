@@ -18,6 +18,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	velocity.x = speed
+	$CollisionShape2D
 	
 func traveling_right(rightp):
 	if(!rightp):

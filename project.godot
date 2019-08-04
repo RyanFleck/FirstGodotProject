@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="Kingdom III (Beta)"
 run/main_scene="res://Scenes/StageOne.tscn"
+boot_splash/image="res://raw_assets/III_feature.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://raw_assets/III.png"
 
 [debug]
