@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TileSets/Ground.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://raw_assets/Button.png" type="Texture" id=3]
-[ext_resource path="res://Objects/Demon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://raw_assets/Button-Selected.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Demon.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.0
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 35.0
+height = 50.0
 
 [node name="StageOne" type="Node2D"]
 position = Vector2( 36.6528, 48.8704 )
@@ -18,68 +27,80 @@ tile_data = PoolIntArray( -524295, 11, 0, -524294, 11, 0, -524293, 11, 0, -52429
 position = Vector2( 30.6819, 27.3328 )
 
 [node name="Controls" type="Node2D" parent="."]
+modulate = Color( 0.823529, 0, 0.823529, 0.388235 )
 z_index = 100
 z_as_relative = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Controls"]
-modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( -34, 30 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
+pressed = ExtResource( 4 )
+shape = SubResource( 1 )
+shape_visible = false
 action = "ui_left"
 visibility_mode = 1
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Controls"]
-modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( -5.08834, 56 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
+pressed = ExtResource( 4 )
+shape = SubResource( 2 )
+shape_visible = false
 action = "ui_right"
 visibility_mode = 1
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Controls"]
-modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( 213.562, 56 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
+pressed = ExtResource( 4 )
+shape = SubResource( 2 )
+shape_visible = false
 action = "ui_accept"
 visibility_mode = 1
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Controls"]
-modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( 242.533, 30 )
 scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
+pressed = ExtResource( 4 )
+shape = SubResource( 2 )
+shape_visible = false
 action = "ui_attack"
 visibility_mode = 1
 
-[node name="Demon" parent="." instance=ExtResource( 4 )]
-position = Vector2( 143.347, -8.8704 )
-
-[node name="Demon2" parent="." instance=ExtResource( 4 )]
+[node name="Demon2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 159.547, -107.394 )
 
-[node name="Demon3" parent="." instance=ExtResource( 4 )]
+[node name="Demon10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 151.125, -127.394 )
+
+[node name="Demon3" parent="." instance=ExtResource( 5 )]
 position = Vector2( -81.0567, -19.798 )
 
-[node name="Demon4" parent="." instance=ExtResource( 4 )]
+[node name="Demon9" parent="." instance=ExtResource( 5 )]
+position = Vector2( -89.4778, -39.7981 )
+
+[node name="Demon4" parent="." instance=ExtResource( 5 )]
 position = Vector2( -62.2862, -21.5044 )
 
-[node name="Demon5" parent="." instance=ExtResource( 4 )]
+[node name="Demon11" parent="." instance=ExtResource( 5 )]
+position = Vector2( -70.7073, -41.5045 )
+
+[node name="Demon5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 312.554, 39.9262 )
 
-[node name="Demon6" parent="." instance=ExtResource( 4 )]
+[node name="Demon8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 304.133, 19.9261 )
+
+[node name="Demon6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 336.444, 40.495 )
 
-[node name="Demon9" parent="." instance=ExtResource( 4 )]
-position = Vector2( -28.7269, 75.7607 )
-
-[node name="Demon7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136.794, 83.7239 )
-
-[node name="Demon8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 223.252, 50.7334 )
+[node name="Demon7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 328.023, 20.4949 )

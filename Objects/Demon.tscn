@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/Demon.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/character_sprites/tile000.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sprites/character_sprites/tile001.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/character_sprites/tile002.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/character_sprites/tile003.png" type="Texture" id=9]
+[ext_resource path="res://raw_assets/Button-Selected.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -39,9 +40,6 @@ height = 7.43873
 
 [node name="Demon" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
@@ -51,3 +49,13 @@ animation = "idle"
 visible = false
 position = Vector2( 0.51405, 5.65456 )
 shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 6.56803, 11.4877 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="Sprite" type="Sprite" parent="RayCast2D"]
+visible = false
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )

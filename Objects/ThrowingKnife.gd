@@ -48,11 +48,19 @@ func _physics_process(delta):
 		velocity.y += grav
 		velocity = move_and_slide(velocity)
 	
-	if(get_slide_count()!=0):
+	
+	var collisions = get_slide_count()
+	if(collisions!=0 and !collision):
 		collision = true
 		set_rotation(0)
+		var colobj = get_slide_collision(0).collider
+		if "Demon" in colobj.name:
+			colobj.die()
+			queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+
 
 

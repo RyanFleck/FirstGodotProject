@@ -3,6 +3,7 @@ extends KinematicBody2D
 const KNIFE = preload("res://Objects/ThrowingKnife.tscn")
 
 const speed = 120
+var speed_mod = 1
 const grav = 40
 const jump = 600
 
@@ -45,11 +46,11 @@ func get_input_movement():
 		velocity.x = 0
 		
 	elif( left ):
-		velocity.x = -1 * speed
+		velocity.x = -1 * speed * speed_mod
 		$AnimatedSprite.flip_h = true
 		facing_right = false
 	elif( right ):
-		velocity.x = 1 * speed
+		velocity.x = 1 * speed * speed_mod
 		$AnimatedSprite.flip_h = false
 		facing_right = true
 	
