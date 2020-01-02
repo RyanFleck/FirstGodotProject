@@ -52,7 +52,7 @@ shape = SubResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 8.31144, 11.4877 )
 enabled = true
-cast_to = Vector2( 0, 10 )
+cast_to = Vector2( 0, 20 )
 
 [node name="RayCast2D_Forward" type="RayCast2D" parent="."]
 position = Vector2( 2.32454, 3.29311 )

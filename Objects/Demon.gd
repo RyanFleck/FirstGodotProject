@@ -66,40 +66,12 @@ func _physics_process(delta):
 		
 	if !wall_lock and is_on_wall():
 		wall_lock = true
-		var moved = false
-		for i in get_slide_count():
-			var col_obj = get_slide_collision(i).collider
-			var x = get_object_in_view()
-			
-			if !moved and x and col_obj and x == col_obj:
-				print(name + " collided with " + x.name)
-				if x.name == "Player":
-					die()
-					moved = true
-				elif x.name == "Terrain":
-					persue_move()
-					moved = true
-				else:
-					turn()
-					moved = true
-				
-			if !moved and col_obj:
-				if col_obj.name == "Player":
-					die()
-					moved = true
-				if col_obj.name == "Terrain":
-					persue_move()
-					moved = true
-				if "Demon" in col_obj.name:
-					turn()
-					moved = true
+		handle_collisions_v3()
+		handle_collisions_v2()
 		
-		if !moved:
-			persue_move()
-
-
+	
 	# Process locks.
-	if edge_lock and is_on_floor() and $RayCast2D.is_colliding():
+	if edge_lock and is_on_floor() and $RayCast2D.is_colliding() and !is_on_wall():
 		edge_lock = false
 		
 	if wall_lock and !is_on_wall():
@@ -110,6 +82,56 @@ func _physics_process(delta):
 		
 	
 	velocity = move_and_slide(velocity, floor_normal)
+
+func handle_collisions_v3():
+	var oview = get_object_in_view()
+	var colobjs = []
+	for i in get_slide_count():
+j		colobjs.append(get_slide_collision(i).collider.name)
+
+	if oview:
+		print(name+" collided with "+oview.name)
+	else:
+		print(name+" collided with")
+	print(colobjs)
+	
+	if "Player" in colobjs:
+		die()
+
+func handle_collisions_v2():
+	var moved = false
+	var x = get_object_in_view()
+	for i in get_slide_count():
+		var col_obj = get_slide_collision(i).collider
+		
+		if !moved and x and col_obj and x == col_obj:
+			#print(name + " collided with " + x.name)
+			if x.name == "Player":
+				die()
+				moved = true
+			elif x.name == "Terrain":
+				persue_move()
+				moved = true
+			elif "Demon" in x.name:
+				turn()
+				moved = true
+			
+		if !moved and col_obj:
+			if col_obj.name == "Player":
+				die()
+				moved = true
+			if col_obj.name == "Terrain":
+				turn()
+				moved = true
+			if "Demon" in col_obj.name:
+				turn()
+				moved = true
+	
+	if !moved:
+		persue_move()
+
+
+
 
 func persue_move():
 	if player.global_position.y < global_position.y:
